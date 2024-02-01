@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+        <div class="parent-container">
+            <div class="child-container" id="add-note">
+                <form action="" method="POST"> {#    обработчик#}
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <p>
+                        <button type="submit" class="notes-button">Add Note</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+
+{% endblock %}

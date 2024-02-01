@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="parent-container">
+    <div class="child-container" id="home">
+    <h1 class="header">My notes</h1>
+        {% for note in notes %}
+            <div class="title-info-size">
+                <div class="container">
+                    <div>
+                <h1>{{ note.title }}</h1>
+                <p>{{ note.content | truncatechars:20}}</p>
+                    </div>
+                        <div class="buttons_field">
+                            <ul>
+                                <li class="menu-li"><a href="{{ note.get_absolute_url_for_edit }}">Edit</a></li>
+                                <li class="menu-li"><a href="{{ note.get_absolute_url_for_delete }}">Delete</a></li>
+                            </ul>
+
+
+                            <p class="date">{{ note.time_of_creation }}</p>
+
+                            <a href="{{ note.get_absolute_url_for_more_info }}">More Info</a>
+                            </div>
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}
+
