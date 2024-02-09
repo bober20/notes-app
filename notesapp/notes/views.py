@@ -7,7 +7,7 @@ from .forms import NoteForm
 
 
 def show_index_page(request):
-    return redirect("notes:login")
+    return redirect("users:login")
 
 
 def show_home_page(request):
